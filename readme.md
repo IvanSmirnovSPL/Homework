@@ -1,6 +1,10 @@
-Лабораторные работы по информатике
+# Лабораторные работы по информатике
 
-Компиляция: <pathToGCC> -o run <pathToFile>
-Пример: gcc -o run .\src\3\Smirnov_if_1.c
+## Компиляция:
+              < pathToGCC > -o run < pathToFile >
 
-Запуск: run.exe
+### Пример:
+              gcc -o run .\src\3\Smirnov_if_1.c
+
+## Запуск:
+            run.exe
