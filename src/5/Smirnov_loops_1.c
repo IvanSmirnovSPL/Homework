@@ -9,32 +9,39 @@
 // вывод значений функции в заданных точках
 // !в задании неточность, неясно к какому интервалу отнести точку PI!
 
-// кусочная функция из условия
-double f(double x)
-{
-    if (x < M_PI / 2)
-        return 2 * sin(x);
-    if (x >= M_PI / 2 && x < M_PI)
-        return (x / 2) * cos(2 * x);
-    if (x >= M_PI)
-        return sin(x) + cos(x);
-}
-
-void main()
+int main()
 {
     // переменная порядка погрешности double
     const double eps = 1e-15;
 
     // вывод через for
     printf("Через for: \n\n");
-    for (double x = 0; x <= 2 * M_PI + eps; x += M_PI / 6) printf("f(%lf) = %lf\n", x, f(x));
+    
+    for (double x = 0; x <= 2 * M_PI + eps; x += M_PI / 6)
+    {
+        double res;
+        if (x < M_PI / 2)
+            res = 2 * sin(x);
+        if (x >= M_PI / 2 && x < M_PI)
+            res = (x / 2) * cos(2 * x);
+        if (x >= M_PI)
+            res = sin(x) + cos(x);
+        printf("f(%lf) = %lf\n", x, res);
+    }
 
     // вывод через while
     printf("\nЧерез while: \n\n");
     double x = 0;
     while (x <= 2 * M_PI + eps)
     {
-        printf("f(%lf) = %lf\n", x, f(x));
+        double res;
+        if (x < M_PI / 2)
+            res = 2 * sin(x);
+        if (x >= M_PI / 2 && x < M_PI)
+            res = (x / 2) * cos(2 * x);
+        if (x >= M_PI)
+            res = sin(x) + cos(x);
+        printf("f(%lf) = %lf\n", x, res);
         x += M_PI / 6;
     }
 
@@ -43,7 +50,14 @@ void main()
     x = 0;
     do
     {
-        printf("f(%lf) = %lf\n", x, f(x));
+        double res;
+        if (x < M_PI / 2)
+            res = 2 * sin(x);
+        if (x >= M_PI / 2 && x < M_PI)
+            res = (x / 2) * cos(2 * x);
+        if (x >= M_PI)
+            res = sin(x) + cos(x);
+        printf("f(%lf) = %lf\n", x, res);
         x += M_PI / 6;
     }while (x <= 2 * M_PI + eps);
 }

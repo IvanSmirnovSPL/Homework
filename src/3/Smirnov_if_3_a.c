@@ -11,25 +11,22 @@
 // определение в фигуре ли точка
 // границы входят в фигуру
 
-// функция принадлежности фигуре
-bool inFigure(double x, double y)
-{
-    if (x * x + y * y <= 25 && x <= 0)
-    {
-        if (x < 0 && x > -2 && y < x + 2 && y > 0)
-            return false;  
-        return true;
-    }
-    else
-        return false;
-}
-
-void main()
+int main()
 {
     // считывание точки на плоскости
     double x, y;
-    scanf("%lf %lf", &x, &y);
+    scanf_s("%lf %lf", &x, &y);
 
     // установление принадлежности точки фигуре
-    printf("(%lf, %lf) %s figure", x, y, inFigure(x, y) ? "in" : "not in");
+    bool res;
+    if (x * x + y * y <= 25 && x <= 0)
+    {
+        if (x < 0 && x > -2 && y < x + 2 && y > 0)
+            res = false;
+        else  
+            res = true;
+    }
+    else
+        res = false;
+    printf("(%lf, %lf) %s figure", x, y, res ? "in" : "not in");
 }

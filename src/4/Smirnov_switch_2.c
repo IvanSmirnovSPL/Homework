@@ -12,7 +12,7 @@ int main()
 {
     // считываем число
     int num;
-    scanf("%i", &num);
+    scanf_s("%i", &num);
 
     // подсчёт кол-ва тысяч, сотен, десятков, единиц в числе
     int thousands = num / 1000;

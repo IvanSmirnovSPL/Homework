@@ -8,25 +8,21 @@
 
 // вывод значения заданной функци в введённой точке
 
-// кусочная функция из условия задачи
-double f(double x)
-{
-    if (x <= 0)
-        return exp(-x);
-    if (x > 0 && x <= 7)
-        return pow(x + 1, 1/3.);
-    if (x > 7 && x <= 87)
-        return (x + 13) / 10;
-    if (x > 87)
-        return 10 * (x - 86);
-}
-
 int main()
 {
     // считываем значение из консоли
     double x;
-    scanf("%lf", &x);
+    scanf_s("%lf", &x);
 
     // выводим значение функции в этой точке
-    printf("f(%lf) = %lf", x, f(x));
+    double res;
+    if (x <= 0)
+        res = exp(-x);
+    if (x > 0 && x <= 7)
+        res = pow(x + 1, 1/3.);
+    if (x > 7 && x <= 87)
+        res = (x + 13) / 10;
+    if (x > 87)
+        res = 10 * (x - 86);
+    printf("f(%lf) = %lf", x, res);
 }

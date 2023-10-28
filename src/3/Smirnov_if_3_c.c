@@ -11,20 +11,17 @@
 // определение в фигуре ли точка
 // границы входят в фигуру
 
-// функция принадлежности фигуре
-bool inFigure(double x, double y)
-{
-    if (x >= 0 && x <= M_PI / 2 && y >= 0 && y <= sin(x))
-        return true;
-    return false;
-}
-
-void main()
+int main()
 {
     // считывание точки на плоскости
     double x, y;
-    scanf("%lf %lf", &x, &y);
+    scanf_s("%lf %lf", &x, &y);
 
     // установление принадлежности точки фигуре
-    printf("(%lf, %lf) %s figure", x, y, inFigure(x, y) ? "in" : "not in");
+    bool res;
+    if (x >= 0 && x <= M_PI / 2 && y >= 0 && y <= sin(x))
+        res = true;
+    else
+        res = false;
+    printf("(%lf, %lf) %s figure", x, y, res ? "in" : "not in");
 }

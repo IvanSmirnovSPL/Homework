@@ -8,11 +8,11 @@
 
 // решение квадратного уравнения ax^2 + bx + c = 0
 
-void main()
+int main()
 {
     // считываем коэффициенты (x, y, z из условия) 
     double a, b, c;
-    scanf("%lf %lf %lf", &a, &c, &b);
+    scanf_s("%lf %lf %lf", &a, &c, &b);
     
     // сортируем их из условий:
     // a >= c >= b
@@ -44,13 +44,13 @@ void main()
             {
                 // все коэфициенты 0 -> x - любое число
                 printf("Solution is R");
-                return;
+                return 0;
             }  
             else
             {
                 // 0*x = -c -> нет решения
                 printf("No solution in R");
-                return; 
+                return 0; 
             }
                  
         }
@@ -59,7 +59,7 @@ void main()
             // b*x + c = 0 -> x = - c / b
             printf("%lf", - c / b);
         }
-        return;
+        return 0;
     }
 
     // расчёт дискриминанта
@@ -69,7 +69,7 @@ void main()
     {
         // отрицатеьный дискриминант -> решение в комплексных чслах
         printf("No solution in R");
-        return;
+        return 0;
     }
     else
     {
@@ -77,13 +77,13 @@ void main()
         {
             // D = 0 -> один корень x = - b / (2 * a)
             printf("%lf", - b / 2 / a);
-            return;
+            return 0;
         }
         else
         {
             // два корня, x = (-b +- sqrt(D)) / (2 * a)
             printf("%lf %lf", (- b + sqrt(D)) / (2 * a), (- b - sqrt(D)) / (2 * a));
-            return;
+            return 0;
         }
     }
     
